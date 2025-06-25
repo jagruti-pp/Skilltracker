@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>📊 SkillTracker</span>
+        </div>
+        <div class="header-controls">
+            <div class="search-bar">
+                <input type="text" placeholder="🔍 Search skills..." aria-label="Search">
+                <button type="submit" aria-label="Submit search">🔎</button>
+            </div>
+            <div class="header-right">
+                <button id="darkModeToggle" class="nav-btn" title="Toggle Dark Mode">🌙</button>
+                <button id="notificationsBtn" class="nav-btn" title="Notifications">🔔</button>
+                <button id="settingsBtn" class="nav-btn" title="Settings">⚙️</button>
+                <button id="loginBtn" class="auth-btn">🔑 Login</button>
+                <button id="signupBtn" class="auth-btn">📝 Signup</button>
+                <button id="logoutBtn" class="auth-btn hidden">🚪 Logout</button>
+                <div class="avatar">
+                    <img src="profileicon.jpg" alt="Profile Avatar">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="toggle-btn" id="sidebarToggle">
+            <span>◀</span>
+        </div>
+        <ul>
+            <li class="active"><a href="#home"><span>🏠</span><span class="nav-text">Home</span></a></li>
+            <li><a href="#dashboard"><span>📊</span><span class="nav-text">Dashboard</span></a></li>
+            <li><a href="#courses"><span>📚</span><span class="nav-text">Courses</span></a></li>
+            <li><a href="#progress"><span>📈</span><span class="nav-text">User Progress</span></a></li>
+            <li><a href="#certifications"><span>🏆</span><span class="nav-text">Certifications</span></a></li>
+            <li><a href="#contact"><span>✉️</span><span class="nav-text">Contact</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content" id="main">
+        <div class="container content">
+            <div class="particles" id="particles"></div>
+            <h1 data-aos="zoom-in">Skill Tracker</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Let's Grow Together!</p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="800">
+            <h3>Your Personalized Learning <br> Roadmap with Progress Tracking </h3>
+            <p>Unlock your full potential with a learning journey that's tailored just for you.</p>
+        </div>
+
+        <!-- Updated Skills You Can Learn Section -->
+        <section id="popular-skills" class="skills-section" data-aos="fade-up">
+            <h2 class="section-title"><span>🛠️ Skills You Can Learn</span></h2>
+            <div class="skills-carousel">
+                <div class="skills-grid">
+                    <div class="skill-card" data-aos="flip-left" data-aos-duration="800">
+                        <span class="emoji-icon">📄</span>
+                        <h3>HTML</h3>
+                    </div>
+                    <div class="skill-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
+                        <span class="emoji-icon">🎨</span>
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="skill-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="200">
+                        <span class="emoji-icon">⚡</span>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="skill-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="300">
+                        <span class="emoji-icon">⚛️</span>
+                        <h3>React</h3>
+                    </div>
+                    <div class="skill-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="400">
+                        <span class="emoji-icon">🐍</span>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="skill-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="500">
+                        <span class="emoji-icon">☕</span>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="skill-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="600">
+                        <span class="emoji-icon">🗃️</span>
+                        <h3>SQL</h3>
+                    </div>
+                    <div class="skill-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="700">
+                        <span class="emoji-icon">🎨</span>
+                        <h3>UI/UX Design</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h4 data-aos="fade-up">Unlock the Skilltracker Advantage</h4>
+        <div class="info-box-container">
+            <div class="info-box" data-aos="fade-right" data-aos-delay="100">
+                <h4><i class="fas fa-route"></i> Personalized Learning Paths</h4>
+                <p>SkillTracker creates a customized learning journey for each student based on their goals and learning pace.</p>
+            </div>
+            <div class="info-box" data-aos="fade-left" data-aos-delay="200">
+                <h4><i class="fas fa-video"></i> Engaging Video Lessons</h4>
+                <p>Our platform hosts high-quality video lessons from some of the best teachers in India.</p>
+            </div>
+            <div class="info-box" data-aos="fade-right" data-aos-delay="300">
+                <h4><i class="fas fa-chart-line"></i> Progress Tracking</h4>
+                <p>SkillTracker provides detailed progress reports, allowing students to track their journey.</p>
+            </div>
+            <div class="info-box" data-aos="fade-left" data-aos-delay="400">
+                <h4><i class="fas fa-certificate"></i> Skill Certifications</h4>
+                <p>Upon completion, SkillTracker offers certificates to validate the learner's skills and knowledge.</p>
+            </div>
+            <div class="info-box" data-aos="fade-up" data-aos-delay="500">
+                <h4><i class="fas fa-mobile-alt"></i> Mobile Compatibility</h4>
+                <p>SkillTracker is available on both desktop and mobile devices, making learning flexible.</p>
+            </div>
+        </div>
+
+       <!-- Updated Explore Our Courses Section -->
+<h4 id="explore-courses" data-aos="fade-up">Explore Our Courses</h4>
+<div class="carousel-container">
+    <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+    <div class="course-carousel">
+        <div class="course-card" data-aos="flip-left" data-aos-delay="100">
+            <div class="card-number">01</div>
+            <div class="card-image">
+                <img src="webdev.jpg" alt="Web Development">
+                <div class="overlay">
+                    <button class="enroll-btn" data-course-id="1">🎯 Enroll Now</button>
+
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>🌐 Web Development Fundamentals</h3>
+                <p class="difficulty">Beginner</p>
+            </div>
+        </div>
+        <div class="course-card" data-aos="flip-left" data-aos-delay="200">
+            <div class="card-number">02</div>
+            <div class="card-image">
+                <img src="database.png" alt="Database">
+                <div class="overlay">
+                    <button class="enroll-btn" data-course-id="2">🎯 Enroll Now</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>🗄️ Database Management</h3>
+                <p class="difficulty">Intermediate</p>
+            </div>
+        </div>
+        <div class="course-card" data-aos="flip-left" data-aos-delay="300">
+            <div class="card-number">03</div>
+            <div class="card-image">
+                <img src="c.png" alt="C Programming">
+                <div class="overlay">
+                    <button class="enroll-btn" data-course-id="3">🎯 Enroll Now</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>💻 C Programming Essentials</h3>
+                <p class="difficulty">Beginner</p>
+            </div>
+        </div>
+        <div class="course-card" data-aos="flip-left" data-aos-delay="400">
+            <div class="card-number">04</div>
+            <div class="card-image">
+                <img src="java.jpg" alt="Java">
+                <div class="overlay">
+                    <button class="enroll-btn" data-course-id="4">🎯 Enroll Now</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>☕ Java Programming</h3>
+                <p class="difficulty">Intermediate</p>
+            </div>
+        </div>
+        <div class="course-card" data-aos="flip-left" data-aos-delay="500">
+            <div class="card-number">05</div>
+            <div class="card-image">
+                <img src="python.jpg" alt="Python">
+                <div class="overlay">
+                    <button class="enroll-btn" data-course-id="5">🎯 Enroll Now</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>🐍 Python for Beginners</h3>
+                <p class="difficulty">Beginner</p>
+            </div>
+        </div>
+        <div class="course-card" data-aos="flip-left" data-aos-delay="600">
+            <div class="card-number">06</div>
+            <div class="card-image">
+                <img src="uiux.jpg" alt="UI/UX Design">
+                <div class="overlay">
+                    <button class="enroll-btn" data-course-id="6">🎯 Enroll Now</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>🎨 UI/UX Design Principles</h3>
+                <p class="difficulty">Beginner</p>
+            </div>
+        </div>
+        <div class="course-card" data-aos="flip-left" data-aos-delay="700">
+            <div class="card-number">07</div>
+            <div class="card-image">
+                <img src="comm.jpg" alt="Communication Skills">
+                <div class="overlay">
+                    <button class="enroll-btn" data-course-id="7">🎯 Enroll Now</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3>🗣️ Communication Skills</h3>
+                <p class="difficulty">Beginner</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+</div>
+
+        <!-- Updated Contact Section -->
+        <div class="contact-section">
+            <div class="wave"></div>
+            <h4 data-aos="fade-up">📬 Contact Us</h4>
+            <div class="contact-details" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-card">
+                    <div class="contact-icon">👩‍💻👩‍💻</div>
+                    <p><i class="fas fa-user-tie"></i> <strong>Website Creators:</strong> Samiksha Chavan, Jagruti Thotam</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:admin@skilltracker.com">admin@skilltracker.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🎓</div>
+                    <p><i class="fas fa-graduation-cap"></i> <strong>Note:</strong> This is our Full Stack Project! 🚀</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">FAQ</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="copyright">
+                <p>© 2025 SkillTracker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chatbot-bubble">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="homepage.js"></script>
+</body>
+</html>

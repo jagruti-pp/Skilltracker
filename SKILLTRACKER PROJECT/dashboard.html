@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillTracker - Learning Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <main class="main-content">
+        <section class="welcome-banner animate-fade-in">
+            <div class="welcome-content">
+                <h2 class="animate-slide-up">Welcome back, <span class="highlight-text">Jagruti</span>! 👋</h2>
+                <p class="animate-slide-up delay-100">You've completed <span class="highlight-number">12</span> lessons this week. Keep up the great work! 🚀</p>
+                <button class="btn primary animate-slide-up delay-200 pulse-on-hover">
+                    <i class="fas fa-play"></i> Continue Learning
+                </button>
+            </div>
+            <div class="welcome-illustration animate-float">
+                <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" alt="Learning illustration">
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            <div class="widget upcoming-goals animate-slide-up delay-150">
+                <div class="widget-header">
+                    <h3><i class="fas fa-bullseye"></i> 🎯 Upcoming Goals</h3>
+                    <button class="widget-action">View All</button>
+                </div>
+                <div class="goals-list"></div>
+            </div>
+            
+            <div class="widget learning-streak animate-slide-up delay-200">
+                <div class="widget-header">
+                    <h3><i class="fas fa-fire pulse"></i> 🔥 Learning Streak</h3>
+                    <span class="streak-count">12 days</span>
+                </div>
+                <div class="streak-content">
+                    <div class="streak-display">
+                        <div class="streak-count animate-count-up" data-target="12">0</div>
+                        <div class="streak-label">day streak! 🎉</div>
+                        <div class="mini-calendar"></div>
+                    </div>
+                    <div class="streak-calendar"></div>
+                    <div class="selected-date">Selected: Today</div>
+                    <div class="streak-footer">
+                        <span class="current-streak">Current streak: 12 days</span>
+                        <span class="best-streak">Best streak: 24 days 🏆</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="widget skill-progress animate-slide-up delay-250">
+                <div class="widget-header">
+                    <h3><i class="fas fa-chart-pie"></i> 📊 Skill Progress</h3>
+                </div>
+                <div class="pie-chart-container">
+                    <div class="pie-chart"></div>
+                    <div class="progress-summary">
+                        <div class="summary-item">
+                            <span>HTML</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%; background-color: #4A6FA5;"></div>
+                            </div>
+                            <span>85%</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>CSS</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%; background-color: #FF7E5F;"></div>
+                            </div>
+                            <span>70%</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>JavaScript</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%; background-color: #2ecc71;"></div>
+                            </div>
+                            <span>50%</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>React</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 30%; background-color: #9b59b6;"></div>
+                            </div>
+                            <span>30%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="widget continue-learning animate-slide-up delay-300">
+                <div class="widget-header">
+                    <h3><i class="fas fa-play-circle"></i> 🚀 Continue Learning</h3>
+                </div>
+                <div class="course-list">
+                    <div class="course-card animate-slide-up">
+                        <div class="course-header">
+                            <div class="course-icon web">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="course-title">Web Development</div>
+                        </div>
+                        <div class="course-progress-container">
+                            <div class="progress-info">
+                                <span>Progress</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill progress-high" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-level beginner">Beginner</span>
+                            <button class="continue-btn">
+                                <i class="fas fa-play"></i> Continue
+                            </button>
+                        </div>
+                    </div>
+                    <div class="course-card animate-slide-up delay-100">
+                        <div class="course-header">
+                            <div class="course-icon python">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="course-title">Python Programming</div>
+                        </div>
+                        <div class="course-progress-container">
+                            <div class="progress-info">
+                                <span>Progress</span>
+                                <span>45%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill progress-mid" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-level intermediate">Intermediate</span>
+                            <button class="continue-btn">
+                                <i class="fas fa-play"></i> Continue
+                            </button>
+                        </div>
+                    </div>
+                    <div class="course-card animate-slide-up delay-200">
+                        <div class="course-header">
+                            <div class="course-icon java">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <div class="course-title">Java Fundamentals</div>
+                        </div>
+                        <div class="course-progress-container">
+                            <div class="progress-info">
+                                <span>Progress</span>
+                                <span>20%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-fill progress-low" style="width: 20%"></div>
+                            </div>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-level advanced">Advanced</span>
+                            <button class="continue-btn">
+                                <i class="fas fa-play"></i> Continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="widget achievements animate-slide-up delay-350">
+                <div class="widget-header">
+                    <h3><i class="fas fa-trophy"></i> 🏆 Achievements</h3>
+                    <span class="badge-count">5/15</span>
+                </div>
+                <div class="badges-grid">
+                    <div class="badge unlocked animate-slide-up">
+                        <i class="fas fa-baby"></i>
+                        <div class="badge-name">First Steps</div>
+                        <div class="badge-tooltip">
+                            <strong>First Steps</strong>
+                            <div class="badge-description">Complete your first lesson 🎯</div>
+                        </div>
+                    </div>
+                    <div class="badge unlocked animate-slide-up delay-50">
+                        <i class="fas fa-bolt"></i>
+                        <div class="badge-name">Quick Learner</div>
+                        <div class="badge-tooltip">
+                            <strong>Quick Learner</strong>
+                            <div class="badge-description">Complete 5 lessons in one day ⚡</div>
+                        </div>
+                    </div>
+                    <div class="badge unlocked animate-slide-up delay-100">
+                        <i class="fas fa-fire"></i>
+                        <div class="badge-name">Week Streak</div>
+                        <div class="badge-tooltip">
+                            <strong>Week Streak</strong>
+                            <div class="badge-description">Learn for 7 days straight 🔥</div>
+                        </div>
+                    </div>
+                    <div class="badge unlocked animate-slide-up delay-150">
+                        <i class="fas fa-trophy"></i>
+                        <div class="badge-name">Skill Master</div>
+                        <div class="badge-tooltip">
+                            <strong>Skill Master</strong>
+                            <div class="badge-description">Master your first skill 🏅</div>
+                        </div>
+                    </div>
+                    <div class="badge unlocked animate-slide-up delay-200">
+                        <i class="fas fa-star"></i>
+                        <div class="badge-name">Course Ninja</div>
+                        <div class="badge-tooltip">
+                            <strong>Course Ninja</strong>
+                            <div class="badge-description">Complete a course with 90%+ 🥷</div>
+                        </div>
+                    </div>
+                    <div class="badge locked animate-slide-up delay-250">
+                        <i class="fas fa-check-double"></i>
+                        <div class="badge-name">Perfect Score</div>
+                        <div class="badge-tooltip">
+                            <strong>Perfect Score</strong>
+                            <div class="badge-description">Score 100% on a quiz 💯</div>
+                        </div>
+                    </div>
+                    <div class="badge locked animate-slide-up delay-300">
+                        <i class="fas fa-earlybirds"></i>
+                        <div class="badge-name">Early Bird</div>
+                        <div class="badge-tooltip">
+                            <strong>Early Bird</strong>
+                            <div class="badge-description">Complete a lesson before 8 AM 🌅</div>
+                        </div>
+                    </div>
+                    <div class="badge locked animate-slide-up delay-350">
+                        <i class="fas fa-moon"></i>
+                        <div class="badge-name">Night Owl</div>
+                        <div class="badge-tooltip">
+                            <strong>Night Owl</strong>
+                            <div class="badge-description">Complete a lesson after 10 PM 🌙</div>
+                        </div>
+                    </div>
+                    <div class="badge locked animate-slide-up delay-400">
+                        <i class="fas fa-running"></i>
+                        <div class="badge-name">Marathoner</div>
+                        <div class="badge-tooltip">
+                            <strong>Marathoner</strong>
+                            <div class="badge-description">Learn for 3+ hours in one session 🏃‍♂️</div>
+                        </div>
+                    </div>
+                    <div class="badge locked animate-slide-up delay-450">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div class="badge-name">Scholar</div>
+                        <div class="badge-tooltip">
+                            <strong>Scholar</strong>
+                            <div class="badge-description">Complete 50 lessons 📚</div>
+                        </div>
+                    </div>
+                    <div class="badge locked animate-slide-up delay-500">
+                        <i class="fas fa-code"></i>
+                        <div class="badge-name">Coder</div>
+                        <div class="badge-tooltip">
+                            <strong>Coder</strong>
+                            <div class="badge-description">Write 1000 lines of code 💻</div>
+                        </div>
+                    </div>
+                    <div class="badge locked animate-slide-up delay-550">
+                        <i class="fas fa-brain"></i>
+                        <div class="badge-name">Thinker</div>
+                        <div class="badge-tooltip">
+                            <strong>Thinker</strong>
+                            <div class="badge-description">Solve 50 problems 🧠</div>
+                        </div>
+                    </div>
+                    <div class="badge locked animate-slide-up delay-600">
+                        <i class="fas fa-project-diagram"></i>
+                        <div class="badge-name">Project Master</div>
+                        <div class="badge-tooltip">
+                            <strong>Project Master</strong>
+                            <div class="badge-description">Complete 5 projects 🛠️</div>
+                        </div>
+                    </div>
+                    <div class="badge locked animate-slide-up delay-650">
+                        <i class="fas fa-users"></i>
+                        <div class="badge-name">Team Player</div>
+                        <div class="badge-tooltip">
+                            <strong>Team Player</strong>
+                            <div class="badge-description">Complete a group project 👥</div>
+                        </div>
+                    </div>
+                    <div class="badge locked animate-slide-up delay-700">
+                        <i class="fas fa-medal"></i>
+                        <div class="badge-name">Champion</div>
+                        <div class="badge-tooltip">
+                            <strong>Champion</strong>
+                            <div class="badge-description">Win a coding challenge 🏆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="widget certifications animate-slide-up delay-400">
+                <div class="widget-header">
+                    <h3><i class="fas fa-certificate"></i> 📜 Certifications</h3>
+                </div>
+                <div class="certificates-list">
+                    <div class="certificate-card gold animate-flip">
+                        <div class="cert-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="cert-details">
+                            <h4>Web Development Certified</h4>
+                            <div class="cert-meta">
+                                <span>Completed on May 15, 2024</span>
+                                <span class="cert-level beginner">Beginner</span>
+                            </div>
+                        </div>
+                        <button class="cert-preview">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="certificate-card silver animate-flip delay-100">
+                        <div class="cert-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="cert-details">
+                            <h4>JavaScript Fundamentals</h4>
+                            <div class="cert-meta">
+                                <span>Completed on March 22, 2024</span>
+                                <span class="cert-level intermediate">Intermediate</span>
+                            </div>
+                        </div>
+                        <button class="cert-preview">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                    <div class="certificate-card bronze animate-flip delay-200">
+                        <div class="cert-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="cert-details">
+                            <h4>Python Basics</h4>
+                            <div class="cert-meta">
+                                <span>Completed on Jan 10, 2024</span>
+                                <span class="cert-level advanced">Advanced</span>
+                            </div>
+                        </div>
+                        <button class="cert-preview">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Certificate Modal -->
+    <div class="certificate-modal" id="certificateModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon gold">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="modal-title">
+                    <h3>Web Development Certified</h3>
+                    <p>Issued on May 15, 2024</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p>This certificate is awarded to Samiksha for successfully completing the Web Development Fundamentals course with distinction.</p>
+                <img src="https://via.placeholder.com/600x400?text=Certificate+Preview" alt="Certificate Preview" class="modal-image">
+                <p>Course completion level: <strong>Beginner</strong></p>
+                <p>Skills acquired: HTML, CSS, JavaScript, Responsive Design</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn primary">
+                    <i class="fas fa-download"></i> Download Certificate
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quick-access animate-float delay-500">
+        <button class="quick-btn" title="Help Center">
+            <i class="fas fa-question-circle"></i>
+        </button>
+        <button class="quick-btn" title="Chat Support">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+        <button class="quick-btn" title="Quick Settings">
+            <i class="fas fa-cog"></i>
+        </button>
+    </div>
+
+    <div id="confetti-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

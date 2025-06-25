@@ -1,0 +1,638 @@
+:root {
+    --primary-blue: #1e3c72;
+    --secondary-blue: #2a5298;
+    --accent-blue: #4b6cb7;
+    --light-blue: #e6f0ff;
+    --white: #ffffff;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e6f0ff 100%);
+    color: #333;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+    border-bottom: 3px solid var(--accent-blue);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.course-title p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.user-progress {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: conic-gradient(var(--white) 0%, transparent 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.progress-circle::before {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.progress-circle span {
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 0 30px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, var(--primary-blue), var(--accent-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.levels-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.level-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.level-card.locked {
+    opacity: 0.7;
+    filter: grayscale(30%);
+}
+
+.level-card.locked:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+    cursor: not-allowed;
+}
+
+.level-card.active {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 20px rgba(75, 108, 183, 0.3);
+}
+
+.level-card.completed::after {
+    content: '✓';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+    z-index: 2;
+}
+
+.level-header {
+    background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 80px;
+}
+
+.level-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.level-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.level-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.level-info p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.level-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-container {
+    margin-bottom: 20px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #4b6cb7, #6a8fd8);
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.btn-outline:hover {
+    background: rgba(75, 108, 183, 0.1);
+}
+
+.footer-banner {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    margin-top: 40px;
+    border-top: 4px solid var(--accent-blue);
+}
+
+.footer-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.btn-glow {
+    background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(30, 60, 114, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(30, 60, 114, 0.7);
+}
+
+.btn-glow::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -50%; }
+    20% { left: 150%; }
+    100% { left: 150%; }
+}
+
+/* Modal Styles */
+.level-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 2% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.close-modal:hover {
+    color: var(--primary-blue);
+    transform: scale(1.1);
+}
+
+#modalTitle {
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-blue);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 20px 0 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.quiz-container {
+    margin-top: 30px;
+    padding: 25px;
+    background: var(--light-blue);
+    border-radius: 10px;
+    border: 1px solid rgba(75, 108, 183, 0.1);
+}
+
+.quiz-container h3 {
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quiz-container h3 i {
+    color: var(--accent-blue);
+}
+
+.quiz-question {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(75, 108, 183, 0.2);
+}
+
+.quiz-question:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.quiz-question p {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.quiz-option {
+    display: block;
+    margin: 12px 0;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz-option:hover {
+    background: #e0e9ff;
+    border-color: var(--accent-blue);
+    transform: translateX(5px);
+}
+
+.quiz-option input {
+    margin-right: 12px;
+    accent-color: var(--accent-blue);
+}
+
+.quiz-actions {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#submitQuiz {
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+}
+
+#quizResult {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: none;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.completion-message {
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+    background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%);
+    border-radius: 10px;
+    display: none;
+    border: 1px solid rgba(75, 108, 183, 0.1);
+}
+
+.completion-icon {
+    font-size: 3rem;
+    color: var(--accent-blue);
+    margin-bottom: 15px;
+}
+
+.completion-message h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.completion-message p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+#nextLevel {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    max-width: 250px;
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .levels-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 20px 15px;
+    }
+    
+    .level-header {
+        padding: 15px;
+    }
+    
+    .level-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .level-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    #modalTitle {
+        font-size: 1.4rem;
+    }
+    
+    .quiz-container {
+        padding: 15px;
+    }
+    
+    .quiz-question p {
+        font-size: 1rem;
+    }
+    
+    .quiz-option {
+        padding: 10px 12px;
+    }
+}

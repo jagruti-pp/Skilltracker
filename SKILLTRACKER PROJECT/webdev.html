@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Journey | SkillTracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="webdev.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="course-title">
+                <h1>Web Development Journey</h1>
+                <p>Master the web, one level at a time</p>
+            </div>
+            <div class="user-progress">
+                <div class="progress-circle">
+                    <span>0%</span>
+                </div>
+                <span>Level 0 of 10</span>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="hero">
+            <h2>Your Web Development Path <i class="fas fa-road"></i></h2>
+            <p>Level up your skills through 10 interactive modules <i class="fas fa-seedling"></i></p>
+            <button class="btn-glow" id="startCourse">
+                <span>Begin Learning Journey</span> <i class="fas fa-arrow-right"></i>
+            </button>
+        </section>
+        
+        <div class="levels-container">
+            <!-- Levels will be populated by JavaScript -->
+        </div>
+        
+        <div class="level-modal" id="levelModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button id="backToCourse" class="btn-back">
+                        <i class="fas fa-arrow-left"></i> Back to Course
+                    </button>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <h2 id="modalTitle">Level 1: HTML Foundations</h2>
+                    
+                    <div class="learning-outcomes">
+                        <h3><i class="fas fa-book-open"></i> What You'll Learn</h3>
+                        <ul id="learningPoints"></ul>
+                    </div>
+                    
+                    <div class="video-container">
+                        <iframe id="levelVideo" width="560" height="315" src="" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="quiz-container" id="quizContainer">
+                        <h3><i class="fas fa-brain"></i> Test Your Knowledge</h3>
+                        <div id="quizQuestions"></div>
+                        <button id="submitQuiz" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Submit Quiz
+                        </button>
+                        <div id="quizResult"></div>
+                    </div>
+                    
+                    <div class="completion-message" id="completionMessage">
+                        <h3><i class="fas fa-trophy"></i> Level Complete!</h3>
+                        <p>You've unlocked the next level! <i class="fas fa-lock-open"></i></p>
+                        <p id="certProgress"></p>
+                        <button id="nextLevel" class="btn btn-primary">
+                            Continue to Next Level <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="webdev.js"></script>
+</body>
+</html>
